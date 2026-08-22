@@ -67,6 +67,50 @@ $routes = [
 
     // v2: Activity Log
     'activity_log' => 'modules/system/activity_log.php',
+
+    // v3: HR & Payroll
+    'departments' => 'modules/hr/departments.php',
+    'positions'   => 'modules/hr/positions.php',
+    'employees'   => 'modules/hr/employees.php',
+    'attendance'  => 'modules/hr/attendance.php',
+    'payroll'     => 'modules/hr/payroll.php',
+    'payroll_view' => 'modules/hr/payroll_view.php',
+
+    // v3: Manufacturing
+    'bom'         => 'modules/manufacturing/bom.php',
+    'work_orders' => 'modules/manufacturing/work_orders.php',
+    'wo_view'     => 'modules/manufacturing/wo_view.php',
+
+    // v3: WMS
+    'warehouses'  => 'modules/wms/warehouses.php',
+    'transfers'   => 'modules/wms/transfers.php',
+    'transfer_form' => 'modules/wms/transfer_form.php',
+    'transfer_view' => 'modules/wms/transfer_view.php',
+
+    // v3: Accounting lanjutan
+    'general_ledger' => 'modules/finance/general_ledger.php',
+    'balance_sheet'  => 'modules/reports/balance_sheet.php',
+
+    // v3: Project
+    'projects'    => 'modules/projects/projects.php',
+    'project_view' => 'modules/projects/view.php',
+    'timesheets'  => 'modules/projects/timesheets.php',
+
+    // v3: Assets
+    'assets'      => 'modules/assets/assets.php',
+    'depreciation' => 'modules/assets/depreciation.php',
+
+    // v3: Quality Control
+    'qc'          => 'modules/qc/inspections.php',
+    'qc_form'     => 'modules/qc/form.php',
+
+    // v3: Budget
+    'budgets'     => 'modules/budget/budgets.php',
+    'budget_view' => 'modules/budget/budget_view.php',
+
+    // v3: Settings & POS
+    'settings'    => 'modules/system/settings.php',
+    'pos'         => 'modules/pos/index.php',
 ];
 
 $publicPages = ['login'];
