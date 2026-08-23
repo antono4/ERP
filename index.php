@@ -111,23 +111,56 @@ $routes = [
     // v3: Settings & POS
     'settings'    => 'modules/system/settings.php',
     'pos'         => 'modules/pos/index.php',
+
+    // v4: CRM
+    'leads'       => 'modules/crm/leads.php',
+    'opportunities' => 'modules/crm/opportunities.php',
+
+    // v4: Tax
+    'taxes'       => 'modules/tax/taxes.php',
+    'efaktur'     => 'modules/tax/efaktur.php',
+
+    // v4: Branch
+    'branches'    => 'modules/branches/branches.php',
+
+    // v4: Shipment
+    'shipments'   => 'modules/shipment/shipments.php',
+
+    // v4: Landed Cost
+    'cost'        => 'modules/cost/landed.php',
+
+    // v4: Commission
+    'commissions' => 'modules/commission/commissions.php',
+
+    // v4: Service & Helpdesk
+    'tickets'     => 'modules/service/tickets.php',
+    'kb'          => 'modules/service/kb.php',
+
+    // v4: Documents
+    'documents'   => 'modules/documents/documents.php',
+
+    // v4: Currency
+    'currencies'  => 'modules/currency/currencies.php',
+
+    // v4: Approval
+    'approval_rules' => 'modules/approval/rules.php',
+
+    // v4: Forecast & MRP
+    'forecast'    => 'modules/forecast/mrp.php',
 ];
 
 $publicPages = ['login'];
 $noLayout = ['login', 'logout', 'api'];
 
-// AJAX endpoint: harga khusus per customer+produk
+// API endpoints
 if ($page === 'api') {
-    Auth::requireLogin();
-    header('Content-Type: application/json');
     $action = $_GET['action'] ?? '';
     if ($action === 'price_level') {
+        Auth::requireLogin();
+        header('Content-Type: application/json');
         $productId = (int)($_GET['product_id'] ?? 0);
         $customerId = (int)($_GET['customer_id'] ?? 0);
-        $level = Database::row(
-            'SELECT price FROM price_levels WHERE product_id = ? AND customer_id = ?',
-            [$productId, $customerId]
-        );
+        $level = Database::row('SELECT price FROM price_levels WHERE product_id = ? AND customer_id = ?', [$productId, $customerId]);
         $base = Database::row('SELECT selling_price, stock FROM products WHERE id = ?', [$productId]);
         echo json_encode([
             'price' => $level ? (float)$level['price'] : (float)$base['selling_price'],
@@ -135,6 +168,12 @@ if ($page === 'api') {
             'stock' => (float)$base['stock'],
             'has_level' => $level !== null,
         ]);
+        exit;
+    }
+    // REST API
+    if (in_array($action, ['products', 'product', 'sales_orders', 'stock', 'stock_movements', 'create_sales_order', 'create_purchase_order'], true)) {
+        require_once BASE_PATH . '/modules/api/index.php';
+        apiHandler();
         exit;
     }
     http_response_code(404);

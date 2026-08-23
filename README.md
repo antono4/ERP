@@ -17,7 +17,19 @@ dibangun dengan PHP native, template AdminLTE 3, dan database MySQL/MariaDB.
 | **Inventory** | Posisi stok, kartu stok, penyesuaian stok, **Stock Opname** (hitung fisik) |
 | **Finance** | Chart of Accounts, Jurnal Umum (debit/kredit seimbang) |
 | **Reports** | Laporan Penjualan, Pembelian, Stok, dan Laba Rugi (dapat diprint & export CSV) |
-| **System** | **Activity Log / Audit Trail** — semua aksi user tercatat |
+| **CRM** | Leads, Opportunities (pipeline), konversi lead ke customer |
+| **Tax** | Master pajak (PPN/PPH), e-Faktur, perhitungan otomatis |
+| **Branches** | Multi-cabang dengan gudang default per cabang |
+| **Shipment** | Tracking pengiriman dengan carrier & nomor resi |
+| **Landed Cost** | Alokasi biaya kirim/bea masuk ke produk (by value/quantity) |
+| **Commission** | Komisi salesman dari penjualan per periode |
+| **Service** | Helpdesk ticket, Knowledge Base, SLA tracking |
+| **Documents** | Upload & lampiran dokumen dengan referensi |
+| **Currency** | Multi-currency dengan kurs harian |
+| **Approval** | Approval matrix multi-level dengan rule amount-based |
+| **Forecast** | Sales forecast & MRP (material requirements planning) |
+| **API** | REST API endpoint JSON untuk integrasi external |
+| **System** | **Activity Log / Audit Trail**, **Company Settings** |
 
 ## Fitur Integrasi (seperti SAP)
 
@@ -47,8 +59,12 @@ mysql -u root -e "CREATE DATABASE erp_db"
 mysql -u root erp_db < database/schema.sql
 mysql -u root erp_db < database/seed.sql
 
-# 3. Import migration v2 (fitur lanjutan)
+# 3. Import migration v2, v3, v4 (fitur enterprise)
 mysql -u root erp_db < database/migration_v2.sql
+mysql -u root erp_db < database/migration_v3.sql
+mysql -u root erp_db < database/seed_v3.sql
+mysql -u root erp_db < database/migration_v4.sql
+mysql -u root erp_db < database/seed_v4.sql
 
 # 4. Sesuaikan koneksi di config/config.php
 

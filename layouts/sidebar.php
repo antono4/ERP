@@ -134,6 +134,11 @@
                         <i class="nav-icon fas fa-clipboard-check"></i><p>Stock Opname</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="index.php?page=documents" class="nav-link <?= activeMenu('documents', $curPage) ?>">
+                        <i class="nav-icon fas fa-file-upload"></i><p>Dokumen</p>
+                    </a>
+                </li>
 
                 <li class="nav-header">KEUANGAN</li>
                 <li class="nav-item">
@@ -146,9 +151,160 @@
                         <i class="nav-icon fas fa-file-invoice"></i><p>Jurnal Umum</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="index.php?page=general_ledger" class="nav-link <?= activeMenu('general_ledger', $curPage) ?>">
+                        <i class="nav-icon fas fa-book-open"></i><p>Buku Besar</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.php?page=budgets" class="nav-link <?= activeMenu('budgets', $curPage) ?>">
+                        <i class="nav-icon fas fa-wallet"></i><p>Budget</p>
+                    </a>
+                </li>
+
+                <li class="nav-header">HR & PAYROLL</li>
+                <li class="nav-item <?= menuOpen(['departments','positions','employees'], $curPage) ?>">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-users-cog"></i>
+                        <p>Master HR <i class="right fas fa-angle-left"></i></p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item"><a href="index.php?page=employees" class="nav-link <?= activeMenu('employees', $curPage) ?>"><i class="far fa-circle nav-icon"></i><p>Karyawan</p></a></li>
+                        <li class="nav-item"><a href="index.php?page=departments" class="nav-link <?= activeMenu('departments', $curPage) ?>"><i class="far fa-circle nav-icon"></i><p>Departemen</p></a></li>
+                <li class="nav-item">
+                    <a href="index.php?page=attendance" class="nav-link <?= activeMenu('attendance', $curPage) ?>">
+                        <i class="nav-icon fas fa-calendar-check"></i><p>Absensi</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.php?page=payroll" class="nav-link <?= activeMenu('payroll', $curPage) ?>">
+                        <i class="nav-icon fas fa-money-check-alt"></i><p>Payroll</p>
+                    </a>
+                </li>
+
+                <li class="nav-header">MANUFAKTUR</li>
+                <li class="nav-item">
+                    <a href="index.php?page=bom" class="nav-link <?= activeMenu('bom', $curPage) ?>">
+                        <i class="nav-icon fas fa-list-ol"></i><p>Bill of Materials</p>
+                    </a>
+                </li>
+                <li class="nav-item <?= menuOpen(['work_orders','wo_view'], $curPage) ?>">
+                    <a href="index.php?page=work_orders" class="nav-link <?= activeMenu('work_orders', $curPage) ?>">
+                        <i class="nav-icon fas fa-industry"></i><p>Work Order</p>
+                    </a>
+                </li>
+
+                <li class="nav-header">PROJECT</li>
+                <li class="nav-item <?= menuOpen(['projects','project_view'], $curPage) ?>">
+                    <a href="index.php?page=projects" class="nav-link <?= activeMenu('projects', $curPage) ?>">
+                        <i class="nav-icon fas fa-project-diagram"></i><p>Project</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.php?page=timesheets" class="nav-link <?= activeMenu('timesheets', $curPage) ?>">
+                        <i class="nav-icon fas fa-clock"></i><p>Timesheet</p>
+                    </a>
+                </li>
+
+                <li class="nav-header">ASET & QC</li>
+                <li class="nav-item">
+                    <a href="index.php?page=assets" class="nav-link <?= activeMenu('assets', $curPage) ?>">
+                        <i class="nav-icon fas fa-building"></i><p>Aset Tetap</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.php?page=depreciation" class="nav-link <?= activeMenu('depreciation', $curPage) ?>">
+                        <i class="nav-icon fas fa-chart-line"></i><p>Penyusutan</p>
+                    </a>
+                </li>
+                <li class="nav-item <?= menuOpen(['qc','qc_form'], $curPage) ?>">
+                    <a href="index.php?page=qc" class="nav-link <?= activeMenu('qc', $curPage) ?>">
+                        <i class="nav-icon fas fa-clipboard-check"></i><p>Quality Control</p>
+                    </a>
+                </li>
+
+                <li class="nav-header">CRM</li>
+                <li class="nav-item <?= menuOpen(['leads','opportunities'], $curPage) ?>">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-user-tie"></i>
+                        <p>CRM <i class="right fas fa-angle-left"></i></p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item"><a href="index.php?page=leads" class="nav-link <?= activeMenu('leads', $curPage) ?>"><i class="far fa-circle nav-icon"></i><p>Leads</p></a></li>
+                        <li class="nav-item"><a href="index.php?page=opportunities" class="nav-link <?= activeMenu('opportunities', $curPage) ?>"><i class="far fa-circle nav-icon"></i><p>Opportunities</p></a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-header">TAX & COMPLIANCE</li>
+                <li class="nav-item">
+                    <a href="index.php?page=taxes" class="nav-link <?= activeMenu('taxes', $curPage) ?>">
+                        <i class="nav-icon fas fa-percent"></i><p>Master Pajak</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.php?page=efaktur" class="nav-link <?= activeMenu('efaktur', $curPage) ?>">
+                        <i class="nav-icon fas fa-file-invoice"></i><p>e-Faktur</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.php?page=commissions" class="nav-link <?= activeMenu('commissions', $curPage) ?>">
+                        <i class="nav-icon fas fa-money-bill-wave"></i><p>Komisi</p>
+                    </a>
+                </li>
+
+                <li class="nav-header">LOGISTIK</li>
+                <li class="nav-item">
+                    <a href="index.php?page=branches" class="nav-link <?= activeMenu('branches', $curPage) ?>">
+                        <i class="nav-icon fas fa-code-branch"></i><p>Cabang</p>
+                    </a>
+                </li>
+                <li class="nav-item <?= menuOpen(['shipments','cost'], $curPage) ?>">
+                    <a href="index.php?page=shipments" class="nav-link <?= activeMenu('shipments', $curPage) ?>">
+                        <i class="nav-icon fas fa-shipping-fast"></i><p>Shipment</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.php?page=cost" class="nav-link <?= activeMenu('cost', $curPage) ?>">
+                        <i class="nav-icon fas fa-dollar-sign"></i><p>Landed Cost</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.php?page=forecast" class="nav-link <?= activeMenu('forecast', $curPage) ?>">
+                        <i class="nav-icon fas fa-chart-line"></i><p>Forecast & MRP</p>
+                    </a>
+                </li>
+
+                <li class="nav-header">SERVICE & SISTEM</li>
+                <li class="nav-item <?= menuOpen(['tickets','kb'], $curPage) ?>">
+                    <a href="index.php?page=tickets" class="nav-link <?= activeMenu('tickets', $curPage) ?>">
+                        <i class="nav-icon fas fa-headset"></i><p>Helpdesk</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.php?page=currencies" class="nav-link <?= activeMenu('currencies', $curPage) ?>">
+                        <i class="nav-icon fas fa-dollar-sign"></i><p>Mata Uang</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.php?page=approval_rules" class="nav-link <?= activeMenu('approval_rules', $curPage) ?>">
+                        <i class="nav-icon fas fa-check-double"></i><p>Approval Matrix</p>
+                    </a>
+                </li>
+
+                <li class="nav-header">POS & SETTING</li>
+                <li class="nav-item">
+                    <a href="index.php?page=pos" class="nav-link <?= activeMenu('pos', $curPage) ?>">
+                        <i class="nav-icon fas fa-cash-register"></i><p>Point of Sale</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.php?page=settings" class="nav-link <?= activeMenu('settings', $curPage) ?>">
+                        <i class="nav-icon fas fa-cog"></i><p>Pengaturan</p>
+                    </a>
+                </li>
 
                 <li class="nav-header">LAPORAN</li>
-                <li class="nav-item <?= menuOpen(['report_sales','report_purchase','report_stock','report_profit'], $curPage) ?>">
+                <li class="nav-item <?= menuOpen(['report_sales','report_purchase','report_stock','report_profit','balance_sheet'], $curPage) ?>">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-chart-bar"></i>
                         <p>Laporan <i class="right fas fa-angle-left"></i></p>
@@ -172,6 +328,11 @@
                         <li class="nav-item">
                             <a href="index.php?page=report_profit" class="nav-link <?= activeMenu('report_profit', $curPage) ?>">
                                 <i class="far fa-circle nav-icon"></i><p>Laba Rugi</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="index.php?page=balance_sheet" class="nav-link <?= activeMenu('balance_sheet', $curPage) ?>">
+                                <i class="far fa-circle nav-icon"></i><p>Neraca</p>
                             </a>
                         </li>
                     </ul>
