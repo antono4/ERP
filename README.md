@@ -3,6 +3,16 @@
 Aplikasi ERP mini yang meniru alur kerja sistem ERP enterprise (seperti SAP),
 dibangun dengan PHP native, template AdminLTE 3, dan database MySQL/MariaDB.
 
+## 📚 Dokumentasi
+
+| Dokumen | Isi |
+|---|---|
+| **[📘 User Guide](docs/USER_GUIDE.md)** | Panduan pengguna lengkap dengan screenshot — cara pakai setiap modul |
+| **[📗 Module Guide](docs/MODULE_GUIDE.md)** | Dokumentasi teknis — tabel, workflow, integrasi jurnal, REST API |
+| **[🖼️ Screenshots](docs/screenshots/)** | 13+ screenshot aplikasi |
+
+![Dashboard](docs/screenshots/02-dashboard.png)
+
 ## Modul
 
 | Modul | Fitur |
