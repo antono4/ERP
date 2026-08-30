@@ -1,111 +1,68 @@
-# MiniERP - Sistem ERP seperti SAP (PHP + AdminLTE + MySQL)
+<!-- README ini dihasilkan otomatis oleh workflow .github/workflows/generate-readme.yml -->
+<!-- Jangan edit manual; perubahan akan ditim pada run berikutnya. -->
 
-Aplikasi ERP mini yang meniru alur kerja sistem ERP enterprise (seperti SAP),
-dibangun dengan PHP native, template AdminLTE 3, dan database MySQL/MariaDB.
+<h1 align="center">Project 👋</h1>
 
-## 📚 Dokumentasi
+<p align="center">
+  <strong></strong>
+</p>
 
-| Dokumen | Isi |
-|---|---|
-| **[📘 User Guide](docs/USER_GUIDE.md)** | Panduan pengguna lengkap dengan screenshot — cara pakai setiap modul |
-| **[📗 Module Guide](docs/MODULE_GUIDE.md)** | Dokumentasi teknis — tabel, workflow, integrasi jurnal, REST API |
-| **[🖼️ Screenshots](docs/screenshots/)** | 13+ screenshot aplikasi |
+<p align="center">
+  <a href="https://github.com/antono4/ERP"><img alt="GitHub repo" src="https://img.shields.io/badge/GitHub-antono4/ERP-blue?logo=github"></a>
+  <a href="https://antono4.github.io/ERP/"><img alt="Live Demo" src="https://img.shields.io/badge/Live%20Demo-Online-success?logo=githubpages"></a>
+  <img alt="Files" src="https://img.shields.io/badge/Files-2362-informational">
+  <img alt="Updated" src="https://img.shields.io/badge/Updated-2026-08-30 13:58:02 WIB-lightgrey">
+</p>
 
-![Dashboard](docs/screenshots/02-dashboard.png)
+---
 
-## Modul
+## 📖 Tentang
 
-| Modul | Fitur |
-|---|---|
-| **Dashboard** | KPI penjualan/pembelian, grafik 6 bulan, stok per kategori, peringatan stok menipis |
-| **Master Data** | Produk (Item Master), Kategori, Customer & Supplier (Business Partner), User dengan role, **Harga Bertingkat** |
-| **Purchasing** | Purchase Order dengan workflow `DRAFT → APPROVED → RECEIVED` (Goods Receipt) |
-| **Sales** | Sales Order dengan workflow `DRAFT → CONFIRMED → DELIVERED` |
-| **Delivery** | Surat Jalan dengan pengiriman parsial (partial delivery) |
-| **Returns** | Retur Penjualan & Pembelian dengan stock reversal + jurnal otomatis |
-| **Billing (AR/AP)** | Faktur Penjualan & Pembelian, Pembayaran (termin), status UNPAID/PARTIAL/PAID/OVERDUE |
-| **Inventory** | Posisi stok, kartu stok, penyesuaian stok, **Stock Opname** (hitung fisik) |
-| **Finance** | Chart of Accounts, Jurnal Umum (debit/kredit seimbang) |
-| **Reports** | Laporan Penjualan, Pembelian, Stok, dan Laba Rugi (dapat diprint & export CSV) |
-| **CRM** | Leads, Opportunities (pipeline), konversi lead ke customer |
-| **Tax** | Master pajak (PPN/PPH), e-Faktur, perhitungan otomatis |
-| **Branches** | Multi-cabang dengan gudang default per cabang |
-| **Shipment** | Tracking pengiriman dengan carrier & nomor resi |
-| **Landed Cost** | Alokasi biaya kirim/bea masuk ke produk (by value/quantity) |
-| **Commission** | Komisi salesman dari penjualan per periode |
-| **Service** | Helpdesk ticket, Knowledge Base, SLA tracking |
-| **Documents** | Upload & lampiran dokumen dengan referensi |
-| **Currency** | Multi-currency dengan kurs harian |
-| **Approval** | Approval matrix multi-level dengan rule amount-based |
-| **Forecast** | Sales forecast & MRP (material requirements planning) |
-| **API** | REST API endpoint JSON untuk integrasi external |
-| **System** | **Activity Log / Audit Trail**, **Company Settings** |
+Repository **`ERP`** adalah situs web pribadi / portofolio yang diterbitkan melalui **GitHub Pages**. Situs utama berada di [`https://antono4.github.io/ERP/`](https://antono4.github.io/ERP/).
 
-## Fitur Integrasi (seperti SAP)
+## 🗂️ Struktur Proyek
 
-- **Goods Receipt** (PO → RECEIVED): stok otomatis bertambah, kartu stok tercatat, dan jurnal otomatis dibuat (Persediaan D / Hutang K).
-- **Delivery** (SO → DELIVERED): stok otomatis berkurang, kartu stok tercatat, jurnal penjualan (Piutang D / Pendapatan K) dan HPP (HPP D / Persediaan K) otomatis dibuat.
-- **Surat Jalan (DO)**: pengiriman parsial per item, stok berkurang saat DO dibuat, SO otomatis DELIVERED jika semua terkirim.
-- **Invoice & Payment**: Faktur otomatis dari SO/PO, pembayaran termin dengan auto-jurnal (Bank D / Piutang K atau Hutang D / Bank K).
-- **Retur**: retur penjualan mengembalikan stok + jurnal retur; retur pembelian mengurangi stok + jurnal retur.
-- **Stock Opname**: hitung fisik vs sistem, selisih otomatis disesuaikan via stock movements.
-- **Harga Bertingkat**: harga khusus per customer per produk, auto-apply di form penjualan via AJAX.
-- **Notifikasi**: bell icon di navbar untuk invoice jatuh tempo, stok minimum, PO menunggu approval.
-- Validasi stok saat delivery — tidak bisa kirim jika stok kurang.
-- Penomoran dokumen otomatis: `PO-2026-0001`, `SO-2026-0001`, `DO-2026-0001`, `SI-2026-0001`, `PI-2026-0001`, `RCV-2026-0001`, `SR-2026-0001`, `PR-2026-0001`, `OPN-2026-0001`, `JE-2026-0001`.
+```
+ERP/
+├── index.html          # Halaman utama (landing / portofolio)
+├── assets/             # Aset statis (css, js, img, vendor)
+├── forms/               # Form handler (PHP)
+```
 
-## Kebutuhan
+## 🛠️ Teknologi
 
-- PHP 8+ dengan ekstensi `pdo_mysql`
-- MySQL / MariaDB
+Berdasarkan isi repository, proyek ini menggunakan:
 
-## Instalasi
+- `HTML`
+- `CSS`
+- `SCSS`
+- `JavaScript`
+- `PHP`
+
+> Total **2362 file** terdeteksi di repository.
+
+## 🚀 Menjalankan Secara Lokal
+
+Karena ini situs statis (HTML/CSS/JS/PHP), cukup buka `index.html` di browser, atau jalankan server lokal:
 
 ```bash
-# 1. Buat database
-mysql -u root -e "CREATE DATABASE erp_db"
+# Tanpa dependency
+python3 -m http.server 8000
+# lalu buka http://localhost:8000
 
-# 2. Import schema & seed data (v1)
-mysql -u root erp_db < database/schema.sql
-mysql -u root erp_db < database/seed.sql
-
-# 3. Import migration v2, v3, v4 (fitur enterprise)
-mysql -u root erp_db < database/migration_v2.sql
-mysql -u root erp_db < database/migration_v3.sql
-mysql -u root erp_db < database/seed_v3.sql
-mysql -u root erp_db < database/migration_v4.sql
-mysql -u root erp_db < database/seed_v4.sql
-
-# 4. Sesuaikan koneksi di config/config.php
-
-# 5. Jalankan
+# atau dengan PHP (untuk form handler di forms/)
 php -S localhost:8000
 ```
 
-Buka http://localhost:8000
+## 📬 Kontak
 
-## Login Demo
+- GitHub: [antono4](https://github.com/antono4)
+- Situs: [https://antono4.github.io/ERP/](https://antono4.github.io/ERP/)
 
-| Username | Password | Role |
-|---|---|---|
-| admin | admin123 | admin |
-| manager | admin123 | manager |
-| staff | admin123 | staff |
+## 📄 Lisensi
 
-## Struktur Folder
+Lihat berkas [`LICENSE`](./LICENSE) untuk informasi lisensi.
 
-```
-erp/
-├── index.php            # Front controller / router
-├── config/config.php    # Konfigurasi DB & aplikasi
-├── core/                # Database (PDO), Auth, helper functions
-├── layouts/             # Header, sidebar, footer (AdminLTE)
-├── modules/             # Modul per fitur (auth, dashboard, master, transaksi, dll)
-├── assets/adminlte/     # AdminLTE 3.2 (offline)
-└── database/            # schema.sql & seed.sql
-```
+---
 
-Setiap modul mengikuti pola yang sama:
-- `module_handle()` — memproses aksi POST sebelum output
-- `module_render()` — menampilkan HTML
-- `module_scripts()` — JavaScript per halaman (opsional)
+<sub>README ini di-generate otomatis pada **2026-08-30 13:58:02 WIB** oleh GitHub Actions .</sub>
