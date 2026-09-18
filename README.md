@@ -1,91 +1,37 @@
-<!-- README ini dihasilkan otomatis oleh .github/workflows/generate-readme.yml -->
-<!-- Jangan edit manual: perubahan akan ditimpa pada run berikutnya. -->
+<!-- README ini dihasilkan otomatis oleh workflow .github/workflows/generate-readme.yml -->
+<!-- Jangan edit manual; perubahan akan ditim pada run berikutnya. -->
 
-<h1 align="center">ERP 👋</h1>
+<h1 align="center">Project 👋</h1>
+
+<p align="center">
+  <strong></strong>
+</p>
 
 <p align="center">
   <a href="https://github.com/antono4/ERP"><img alt="GitHub repo" src="https://img.shields.io/badge/GitHub-antono4/ERP-blue?logo=github"></a>
-  <img alt="Files" src="https://img.shields.io/badge/Files-2357-informational">
-  <img alt="Last commit" src="https://img.shields.io/github/last-commit/antono4/ERP">
+  <a href="https://antono4.github.io/ERP/"><img alt="Live Demo" src="https://img.shields.io/badge/Live%20Demo-Online-success?logo=githubpages"></a>
+  <img alt="Files" src="https://img.shields.io/badge/Files-2360-informational">
+  <img alt="Updated" src="https://img.shields.io/badge/Updated-2026-09-18 07:20:21 WIB-lightgrey">
 </p>
 
 ---
 
 ## 📖 Tentang
 
-Repository **`ERP`** adalah proyek PHP yang dibangun dengan HTML, CSS, SCSS, JavaScript, PHP.
-GitHub Pages belum diaktifkan untuk repository ini.
+Repository **`ERP`** adalah situs web pribadi / portofolio yang diterbitkan melalui **GitHub Pages**. Situs utama berada di [`https://antono4.github.io/ERP/`](https://antono4.github.io/ERP/).
 
 ## 🗂️ Struktur Proyek
 
 ```
 ERP/
-.github/
-  workflows/
-.gitignore
-assets/
-  adminlte/
-config/
-  config.php
-core/
-  Auth.php
-  Database.php
-  functions.php
-database/
-  migration_v2.sql
-  migration_v3.sql
-  migration_v4.sql
-  schema.sql
-  seed.sql
-  seed_v3.sql
-  seed_v4.sql
-docs/
-  MODULE_GUIDE.md
-  USER_GUIDE.md
-  screenshots/
-index.php
-layouts/
-  footer.php
-  header.php
-  sidebar.php
-modules/
-  api/
-  approval/
-  assets/
-  auth/
-  billing/
-  branches/
-  budget/
-  commission/
-  cost/
-  crm/
-  currency/
-  dashboard/
-  delivery/
-  documents/
-  finance/
-  forecast/
-  hr/
-  inventory/
-  manufacturing/
-  master/
-  pos/
-  projects/
-  purchasing/
-  qc/
-  reports/
-  returns/
-  sales/
-  service/
-  shipment/
-  system/
-  tax/
-  wms/
+├── index.html          # Halaman utama (landing / portofolio)
+├── assets/             # Aset statis (css, js, img, vendor)
+├── forms/               # Form handler (PHP)
 ```
 
 ## 🛠️ Teknologi
 
-Berdasarkan ekstensi berkas yang terdeteksi di repository:
+Berdasarkan isi repository, proyek ini menggunakan:
 
 - `HTML`
 - `CSS`
@@ -93,27 +39,30 @@ Berdasarkan ekstensi berkas yang terdeteksi di repository:
 - `JavaScript`
 - `PHP`
 
-> Total **2357 berkas** di repository (di luar `.git`, `node_modules`, `dist`, dan `build`).
+> Total **2360 file** terdeteksi di repository.
 
 ## 🚀 Menjalankan Secara Lokal
 
-Butuh PHP dan Composer:
+Karena ini situs statis (HTML/CSS/JS/PHP), cukup buka `index.html` di browser, atau jalankan server lokal:
 
 ```bash
-composer install
-php spark serve
-# atau
-php -S localhost:8000 -t public
+# Tanpa dependency
+python3 -m http.server 8000
+# lalu buka http://localhost:8000
+
+# atau dengan PHP (untuk form handler di forms/)
+php -S localhost:8000
 ```
 
 ## 📬 Kontak
 
 - GitHub: [antono4](https://github.com/antono4)
+- Situs: [https://antono4.github.io/ERP/](https://antono4.github.io/ERP/)
 
 ## 📄 Lisensi
 
-Proyek ini dilisensikan di bawah MIT License — lihat berkas [`LICENSE`](./LICENSE).
+Lihat berkas [`LICENSE`](./LICENSE) untuk informasi lisensi.
 
 ---
 
-<sub>README ini di-generate otomatis oleh GitHub Actions `.github/workflows/generate-readme.yml`.</sub>
+<sub>README ini di-generate otomatis pada **2026-09-18 07:20:21 WIB** oleh GitHub Actions `.github/workflows/generate-readme.yml`.</sub>
