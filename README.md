@@ -1,1 +1,30 @@
-Last updated: 2026-10-03 01:46:33 WIB
+# ERP
+
+
+
+## 📋 Overview
+
+This repository contains **2363 files** and is built with the following technologies:
+
+PHP
+
+## 🚀 Quick Start
+
+```bash
+php -S localhost:8000
+```
+
+## ✨ Features
+
+- 📝 Auto-generated documentation
+
+## 🛠️ Technologies
+
+PHP
+
+## 📄 License
+
+MIT License
+
+---
+*Last updated: 2026-10-03 02:17:26 WIB*
